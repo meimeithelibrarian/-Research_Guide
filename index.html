@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENG 101 Research Success Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            background: #f8f9fc;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+        }
+
+        .section h2 {
+            color: #1e3c72;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section h3 {
+            color: #2a5298;
+            font-size: 1.3rem;
+            margin: 20px 0 15px 0;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #e0e6ff;
+        }
+
+        .database-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .database-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid #e0e6ff;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .database-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+        }
+
+        .database-card h4 {
+            color: #1e3c72;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .database-card p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+
+        .steps-list {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .steps-list ol {
+            padding-left: 20px;
+        }
+
+        .steps-list li {
+            margin-bottom: 10px;
+            padding: 8px 0;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .highlight-box strong {
+            font-size: 1.1rem;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e0e6ff;
+        }
+
+        th {
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background: #f8f9fc;
+        }
+
+        .code-block {
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            font-family: 'Courier New', monospace;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .tip-card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #52c41a;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .mistake-card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #ff4d4f;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .checklist {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid #e0e6ff;
+        }
+
+        .checklist ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .checklist li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .checklist li::before {
+            content: "☐";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-size: 1.2rem;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-item h4 {
+            margin-bottom: 8px;
+            color: #e0e6ff;
+        }
+
+        .success-quote {
+            background: linear-gradient(135deg, #52c41a 0%, #73d13d 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.1rem;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(82, 196, 26, 0.3);
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #667eea;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -37px;
+            top: 25px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #667eea;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #667eea;
+        }
+
+        .timeline-item h4 {
+            color: #1e3c72;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                border-radius: 10px;
+            }
+            
+            .header {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+            
+            .database-grid, .tips-grid, .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .print-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 20px 0;
+            transition: background 0.2s;
+        }
+
+        .print-btn:hover {
+            background: #5a67d8;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            
+            .print-btn {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 ENG 101 Research Success Guide</h1>
+            <p>Anne Springs Close Library | York Technical College</p>
+        </div>
+
+        <div class="content">
+            <button class="print-btn" onclick="window.print()">🖨️ Print This Guide</button>
+
+            <div class="section">
+                <h2>🗄️ Your Essential Database Toolkit</h2>
+                <p>Master these two key databases and you'll have everything you need for successful ENG 101 research!</p>
+                
+                <div class="database-grid">
+                    <div class="database-card">
+                        <h4>📰 Academic Search Complete</h4>
+                        <p><strong>Best for:</strong> General topics, current events, interdisciplinary research</p>
+                        <p><strong>Contains:</strong> Magazines, newspapers, scholarly articles, reports</p>
+                        <p><strong>Use when:</strong> You need variety, different perspectives, or current information</p>
+                    </div>
+                    
+                    <div class="database-card">
+                        <h4>📚 MLA International Bibliography</h4>
+                        <p><strong>Best for:</strong> Literature, writing, language, and humanities topics</p>
+                        <p><strong>Contains:</strong> Scholarly articles, book reviews, dissertations, criticism</p>
+                        <p><strong>Use when:</strong> Your topic connects to literature, writing, or cultural studies</p>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <strong>Pro Tip:</strong> Start with <strong>Academic Search Complete</strong> for broad topics, then use <strong>MLA International Bibliography</strong> for deeper literary and humanities analysis!
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🚀 Getting to Your Databases</h2>
+                
+                <div class="steps-list">
+                    <h3>From Campus or Home:</h3>
+                    <ol>
+                        <li>Go to <strong>yorktech.edu</strong></li>
+                        <li>Click <strong>"Library"</strong> (main menu)</li>
+                        <li>Select <strong>"Databases A-Z"</strong></li>
+                        <li>Choose your database</li>
+                        <li><strong>Off-campus?</strong> Login with YTC credentials</li>
+                    </ol>
+                </div>
+
+                <h3>🔍 OneSearch - Your Gateway to Everything</h3>
+                <p>Use our <strong>OneSearch online catalog</strong> to discover:</p>
+                <div class="tips-grid">
+                    <div class="tip-card">📚 Books and e-books</div>
+                    <div class="tip-card">📄 Scholarly articles</div>
+                    <div class="tip-card">🎥 Videos and multimedia</div>
+                    <div class="tip-card">📰 Newspapers and magazines</div>
+                </div>
+
+                <div class="highlight-box">
+                    <strong>⚡ Speed Route:</strong> Bookmark yorktech.libguides.com
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🔍 Smart Search Strategies</h2>
+                
+                <h3>Boolean Search Magic</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Operator</th>
+                                <th>Function</th>
+                                <th>Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>"quotation marks"</strong></td>
+                                <td>Exact phrases</td>
+                                <td>"social media"</td>
+                            </tr>
+                            <tr>
+                                <td><strong>AND</strong></td>
+                                <td>Narrows search (both terms must appear)</td>
+                                <td>"social media" AND "mental health"</td>
+                            </tr>
+                            <tr>
+                                <td><strong>OR</strong></td>
+                                <td>Broadens search (either term can appear)</td>
+                                <td>"teenagers" OR "adolescents"</td>
+                            </tr>
+                            <tr>
+                                <td><strong>NOT</strong></td>
+                                <td>Excludes unwanted results</td>
+                                <td>"mental health" NOT "children"</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>📊 Source Evaluation: The CRAAP Test</h2>
+                <p>Before using any source, check these five criteria:</p>
+                
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <h4>🗓️ Currency</h4>
+                        <p>Recent enough for your topic?</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>🎯 Relevance</h4>
+                        <p>Answers your research question?</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>👨‍🎓 Authority</h4>
+                        <p>Author has credentials/expertise?</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>📊 Accuracy</h4>
+                        <p>Can you verify information elsewhere?</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>🎭 Purpose</h4>
+                        <p>Written to inform, persuade, or sell?</p>
+                    </div>
+                </div>
+
+                <h3>Quality Guidelines</h3>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <h4>✅ Best Sources</h4>
+                        <p>Peer-reviewed articles, academic books, reputable news</p>
+                    </div>
+                    <div class="mistake-card">
+                        <h4>⚠️ Use Carefully</h4>
+                        <p>Blogs, Wikipedia (background only), popular websites</p>
+                    </div>
+                    <div class="mistake-card">
+                        <h4>❌ Avoid</h4>
+                        <p>Random websites, no author, severely outdated info</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>📝 MLA Formatting Essentials</h2>
+                
+                <div class="checklist">
+                    <h3>Paper Setup Checklist</h3>
+                    <ul>
+                        <li><strong>Font:</strong> Times New Roman, 12pt</li>
+                        <li><strong>Spacing:</strong> Double-space everything</li>
+                        <li><strong>Margins:</strong> 1 inch all sides</li>
+                        <li><strong>Header:</strong> Last name + page number (top right)</li>
+                    </ul>
+                </div>
+
+                <h3>First Page Info (Top Left)</h3>
+                <div class="code-block">
+Your Name<br>
+Professor's Name<br>
+Course Name<br>
+Date (Day Month Year)<br><br>
+<strong>Example:</strong> 10 September 2024<br>
+<strong>NOT:</strong> September 10, 2024
+                </div>
+
+                <h3>In-Text Citations Quick Reference</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Situation</th>
+                                <th>Format</th>
+                                <th>Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Basic quote</td>
+                                <td>(Author Page#)</td>
+                                <td>(Smith 45)</td>
+                            </tr>
+                            <tr>
+                                <td>Author in sentence</td>
+                                <td>(Page#)</td>
+                                <td>Smith argues "..." (45)</td>
+                            </tr>
+                            <tr>
+                                <td>Website/no pages</td>
+                                <td>(Author)</td>
+                                <td>(Johnson)</td>
+                            </tr>
+                            <tr>
+                                <td>No author</td>
+                                <td>("Short Title")</td>
+                                <td>("Climate Report")</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>📚 Works Cited Format</h2>
+                
+                <div class="highlight-box">
+                    <strong>Basic Pattern:</strong> Author. "Title." <em>Container</em>, Date, Location.
+                </div>
+
+                <h3>Common Examples:</h3>
+                
+                <div class="code-block">
+<strong>Book:</strong><br>
+Morrison, Toni. Beloved. Vintage Books, 1987.<br><br>
+
+<strong>Website Article:</strong><br>
+Johnson, Mary. "Climate Solutions." Environmental News, 
+    15 Oct. 2024, www.envnews.com/solutions.<br><br>
+
+<strong>Database Article:</strong><br>
+Smith, John. "Student Success Strategies." Journal of Education, 
+    vol. 25, no. 3, 2024, pp. 45-67. Academic Search Complete.
+                </div>
+
+                <div class="checklist">
+                    <h3>Works Cited Page Rules:</h3>
+                    <ul>
+                        <li><strong>Title:</strong> "Works Cited" (centered, no bold/italics)</li>
+                        <li><strong>Location:</strong> Last page of paper</li>
+                        <li><strong>Format:</strong> Double-spaced, hanging indent</li>
+                        <li><strong>Order:</strong> Alphabetical by author's last name</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>📋 Annotated Bibliography Made Simple</h2>
+                
+                <p><strong>What Is It?</strong> Works Cited entries + short summaries (annotations) of each source</p>
+
+                <div class="highlight-box">
+                    <strong>Three-Sentence Annotation Formula:</strong><br>
+                    1. What does this source cover?<br>
+                    2. What are the main findings/arguments?<br>
+                    3. How will you use this in your research?
+                </div>
+
+                <h3>Sample Entry:</h3>
+                <div class="code-block">
+Johnson, Sarah. "Digital Detox for Students." Student Wellness 
+    Journal, vol. 15, no. 3, 2024, pp. 23-35.
+
+This study examines 200 college students who took week-long 
+breaks from social media platforms. Johnson found that 78% 
+of participants reported better sleep, improved focus, and 
+reduced anxiety during their digital detox period. This source 
+will provide concrete evidence for my argument that students 
+should consider regular social media breaks.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🧊 ICE Method for Quotes</h2>
+                
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <h4>I = Introduce</h4>
+                        <p>Who said it? What's their credibility?</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>C = Cite</h4>
+                        <p>Quote or paraphrase with proper citation</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>E = Explain</h4>
+                        <p>Why does this matter to your argument?</p>
+                    </div>
+                </div>
+
+                <h3>Example:</h3>
+                <div class="code-block">
+<strong>Introduce:</strong> Leading education researcher Dr. Smith conducted a study on student success.<br>
+<strong>Cite:</strong> She found that "students who start research early score 23% higher on papers" (Smith 78).<br>
+<strong>Explain:</strong> This demonstrates that time management directly impacts academic performance.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>⏰ Research Timeline for Success</h2>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4>Week 1: Foundation</h4>
+                        <div class="checklist">
+                            <ul>
+                                <li>Choose and narrow topic</li>
+                                <li>Background reading</li>
+                                <li>Develop research questions</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h4>Week 2: Source Gathering</h4>
+                        <div class="checklist">
+                            <ul>
+                                <li>Search databases systematically</li>
+                                <li>Evaluate sources with CRAAP test</li>
+                                <li>Collect more sources than required</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h4>Week 3: Deep Reading</h4>
+                        <div class="checklist">
+                            <ul>
+                                <li>Read sources thoroughly</li>
+                                <li>Take detailed notes with citations</li>
+                                <li>Look for connections between sources</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h4>Week 4: Writing & Citing</h4>
+                        <div class="checklist">
+                            <ul>
+                                <li>Write with sources integrated (ICE method)</li>
+                                <li>Add citations as you write</li>
+                                <li>Create Works Cited page</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>💡 Pro Tips for Research Success</h2>
+                
+                <div class="tips-grid">
+                    <div class="tip-card">Set up MLA template in Word and save it</div>
+                    <div class="tip-card">Screenshot citation info while researching</div>
+                    <div class="tip-card">Read abstracts first to save time</div>
+                    <div class="tip-card">Use database filters (peer-reviewed, date range)</div>
+                    <div class="tip-card">Keep backup sources in case some don't work</div>
+                    <div class="tip-card">Ask librarians for help - we're here for you!</div>
+                </div>
+            </div>
+
+            <div class="contact-section">
+                <h2>🆘 Library Support - We're Here to Help!</h2>
+                <p>Don't struggle alone - our expert librarians are ready to assist you!</p>
+                
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <h4>📧 Email</h4>
+                        <p>library@yorktech.edu</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>📞 Phone</h4>
+                        <p>(803) 327-8025</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>💬 Live Chat</h4>
+                        <p>Available on library website</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>🏢 In-Person</h4>
+                        <p>Reference desk</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>📅 Appointments</h4>
+                        <p>Schedule through Navigate</p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 25px; color: #e0e6ff;">We Help With:</h3>
+                <div class="tips-grid" style="margin-top: 15px;">
+                    <div class="contact-item">Finding sources for your topic</div>
+                    <div class="contact-item">Database navigation and searching</div>
+                    <div class="contact-item">Citation formatting questions</div>
+                    <div class="contact-item">Topic development and narrowing</div>
+                    <div class="contact-item">Source evaluation and credibility</div>
+                    <div class="contact-item">Research strategy planning</div>
+                </div>
+            </div>
+
+            <div class="success-quote">
+                <p>"Good research takes time, but the right tools make it easier. Start early, use quality sources, and don't hesitate to ask for help!"</p>
+                <p style="margin-top: 15px; font-weight: bold;">Your success is our priority at Anne Springs Close Library.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add hover effects for interactive elements
+        document.querySelectorAll('.database-card, .tip-card, .mistake-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-2px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
